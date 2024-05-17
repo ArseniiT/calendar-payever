@@ -1,0 +1,35 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #333333;
+    color: #efefef;
+    border-radius: 5px;
+}
+
+.calendar {
+    width: 96%;
+    height: 96%;
+    text-align: center;
+    background-color: #333333;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #555;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day:hover {
+    background-color: grey;
+}
