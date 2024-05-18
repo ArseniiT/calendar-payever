@@ -50,4 +50,10 @@ export class CalendarV1Component implements OnInit {
     this.currentDate = newDate;
     this.generateCalendar();
   }
+
+  selectDay(day: number) {
+    const newDate = new Date(this.currentDate);
+    newDate.setDate(day);
+    this.currentDate = newDate;
+  }
 }

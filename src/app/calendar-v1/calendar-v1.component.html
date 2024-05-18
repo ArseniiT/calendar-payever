@@ -1,17 +1,17 @@
-<!-- <div class="calendar-container"> -->
-    <!-- <div class="calendar"> -->
-    <mat-card class="demo-inline-calendar-card">
-        <!-- <button mat-icon-button class="nav-buttonn" (click)="prevMonth()"> -->
-            <span><</span>
-            <!-- <mat-icon>keyboard_arrow_left</mat-icon> -->
-        <!-- </button> -->
-        <span class="month-year">{{ currentDate | date: 'MMMM yyyy' | uppercase }}</span>
-        <!-- <button mat-icon-button class="nav-buttonn" (click)="nextMonth()"> -->
+<mat-card class="calendar">
+    <div class="nav-container">
+        <button mat-icon-button class="nav-button" (click)="prevMonth()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <span class="month-year">
+            {{ currentDate.getDate() }}
+            {{ currentDate | date: 'MMMM yyyy' | uppercase }}
+        </span>
+        <button mat-icon-button class="nav-button" (click)="nextMonth()">
             <mat-icon>keyboard_arrow_right</mat-icon>
-        <!-- </button> -->
-        <div class="days">
-            <div *ngFor="let day of daysInMonth" class="day">{{ day }}</div>
-        </div>
-    </mat-card>
-    <!-- </div> -->
-<!-- </div> -->
+        </button>
+    </div>
+    <div class="days">
+        <div *ngFor="let day of daysInMonth" class="day" (click)="selectDay(day)">{{ day }}</div>
+    </div>
+</mat-card>

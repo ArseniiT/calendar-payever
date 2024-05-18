@@ -1,35 +1,33 @@
-.calendar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    background-color: #333333;
-    color: #efefef;
-    border-radius: 5px;
+.calendar {
+    background-color: #555;
 }
 
-.calendar {
-    width: 96%;
-    height: 96%;
-    text-align: center;
-    background-color: #333333;
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .days {
     display: grid;
+    height: 100%;
     grid-template-columns: repeat(7, 1fr);
 }
 
 .day {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #555;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.day:hover {
+.month-year {
+    color: grey;
+}
+
+.day:hover, .month-year:hover {
     background-color: grey;
 }
