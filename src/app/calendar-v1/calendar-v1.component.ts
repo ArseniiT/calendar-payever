@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CalendarV1Component implements OnInit {
 
+  selectedDate!: Date;
   currentDate!: Date;
   daysInMonth!: number[];
   blankDays!: number[];
@@ -23,10 +24,6 @@ export class CalendarV1Component implements OnInit {
     this.currentDate = new Date();
     this.daysInMonth = [];
     this.generateCalendar();
-  }
-
-  selectedDate(selectedDate: Date) {
-    console.log(selectedDate);
   }
 
   generateCalendar() {
@@ -58,8 +55,14 @@ export class CalendarV1Component implements OnInit {
   }
 
   selectDay(day: number) {
-    const newDate = new Date(this.currentDate);
-    newDate.setDate(day);
-    this.currentDate = newDate;
+    this.selectedDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), day);
+    console.log(this.selectedDate);
+  }
+
+  isSelectedDay(day: number): boolean {
+    return this.selectedDate &&
+      this.selectedDate.getFullYear() === this.currentDate.getFullYear() &&
+      this.selectedDate.getMonth() === this.currentDate.getMonth() &&
+      this.selectedDate.getDate() === day;
   }
 }

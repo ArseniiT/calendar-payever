@@ -52,6 +52,8 @@
 }
 
 .month-year {
+    padding: 5px;
+    font-size: 1.2em;
     color: #3fabab;
     cursor: pointer;
 }
@@ -67,4 +69,10 @@
 
 .blank {
     background-color: transparent;
+}
+
+.selected {
+    background-color: #3fabab;
+    color: #fff;
+    border-radius: 50%;
 }
