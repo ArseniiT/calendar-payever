@@ -1,12 +1,40 @@
 .calendar {
     background-color: #555;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.nav-button {
+    background-color: #555;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.nav-icon {
+    color: #3fabab;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+}
+
+.weekday {
+    color: #3fabab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold;
 }
 
 .days {
@@ -20,14 +48,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     padding: 10px;
 }
 
 .month-year {
-    color: grey;
+    color: #3fabab;
+    cursor: pointer;
 }
 
-.day:hover, .month-year:hover {
+.select {
+    cursor: pointer;
+}
+
+.nav-button:hover, .select:hover, .month-year:hover {
     background-color: grey;
+    border-radius: 2px;
+}
+
+.blank {
+    background-color: transparent;
 }

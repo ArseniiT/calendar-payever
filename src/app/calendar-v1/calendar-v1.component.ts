@@ -14,6 +14,8 @@ export class CalendarV1Component implements OnInit {
 
   currentDate!: Date;
   daysInMonth!: number[];
+  blankDays!: number[];
+  weekDays: string[] = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
   constructor() { }
 
@@ -28,10 +30,14 @@ export class CalendarV1Component implements OnInit {
   }
 
   generateCalendar() {
+    this.daysInMonth = [];
     const year = this.currentDate.getFullYear();
     const month = this.currentDate.getMonth();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    this.daysInMonth = [];
+
+    this.blankDays = Array(firstDayOfMonth).fill(0);
+
     for (let i = 1; i <= daysInMonth; i++) {
       this.daysInMonth.push(i);
     }
