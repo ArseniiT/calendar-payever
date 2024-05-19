@@ -71,7 +71,7 @@
     background-color: transparent;
 }
 
-.selected {
+.selected, .selected:hover {
     background-color: #3fabab;
     color: #fff;
     border-radius: 50%;
