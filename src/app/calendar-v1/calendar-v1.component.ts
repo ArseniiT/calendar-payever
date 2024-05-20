@@ -84,7 +84,6 @@ export class CalendarV1Component implements OnInit {
   selectDay(day: number) {
     this.selectedDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), day);
     this.selected.emit(this.selectedDate);
-    // console.log(this.selectedDate);
   }
 
   isSelectedDay(day: number): boolean {
