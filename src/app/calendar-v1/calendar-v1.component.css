@@ -76,3 +76,23 @@
     color: #fff;
     border-radius: 50%;
 }
+
+.years {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.year {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.year:hover {
+    background-color: grey;
+    border-radius: 2px;
+}

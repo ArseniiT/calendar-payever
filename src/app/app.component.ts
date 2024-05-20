@@ -12,4 +12,10 @@ import { CalendarV1Component } from "./calendar-v1/calendar-v1.component";
 })
 export class AppComponent {
   title = 'calendar';
+  selectedDate!: Date;
+
+  onDateSelected(date: Date) {
+    console.log(date);
+    this.selectedDate = date;
+  }
 }
