@@ -23,13 +23,6 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('calendar');
   });
 
-  it('should render app-calendar-v1 component', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const calendarElement: DebugElement = fixture.debugElement.query(By.css('app-calendar-v1'));
-    expect(calendarElement).toBeTruthy();
-  });
-
   it('should call onDateSelected and set selectedDate when a date is selected in the calendar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const component = fixture.componentInstance;

@@ -28,6 +28,8 @@ export class ReminderComponent implements OnInit {
   }
 
   getReminders(): void {
-    this.reminders = this.reminderService.getRemindersByDate(this.selectedDate);
+    if (this.selectedDate) {
+      this.reminders = this.reminderService.getRemindersByDate(this.selectedDate);
+    }
   }
 }
