@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalendarV2Component } from './calendar-v2.component';
+import { ReminderComponent } from './reminder.component';
 
-describe('CalendarV2Component', () => {
-  let component: CalendarV2Component;
-  let fixture: ComponentFixture<CalendarV2Component>;
+describe('ReminderComponent', () => {
+  let component: ReminderComponent;
+  let fixture: ComponentFixture<ReminderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalendarV2Component]
+      imports: [ReminderComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CalendarV2Component);
+    fixture = TestBed.createComponent(ReminderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

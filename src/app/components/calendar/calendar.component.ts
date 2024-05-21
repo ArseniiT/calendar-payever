@@ -4,11 +4,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-calendar-v1',
+  selector: 'app-calendar',
   standalone: true,
   imports: [CommonModule, MatIconModule, MatCardModule],
-  templateUrl: './calendar-v1.component.html',
-  styleUrls: ['./calendar-v1.component.css']
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
 export class CalendarV1Component implements OnInit {
 
@@ -31,6 +31,7 @@ export class CalendarV1Component implements OnInit {
     this.selectedDate = new Date();
     this.generateCalendar();
     this.generateYears();
+    this.selected.emit(this.selectedDate);
   }
 
   generateCalendar() {

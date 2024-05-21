@@ -1,4 +1,4 @@
 <div class="container">
-  <!-- <app-calendar-v2></app-calendar-v2> -->
-  <app-calendar-v1 (selected)="onDateSelected($event)"></app-calendar-v1>
+  <app-calendar (selected)="onDateSelected($event)"></app-calendar>
+  <app-reminder [selectedDate]="selectedDate"></app-reminder>
 </div>

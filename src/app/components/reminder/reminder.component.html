@@ -1,0 +1,11 @@
+<mat-card class="reminder">
+  <div class="reminder-header">
+    <h2>Reminders for {{ selectedDate | date: 'longDate' }}</h2>
+  </div>
+  <div class="reminder-list">
+    <div *ngFor="let reminder of reminders">
+      <h3>{{ reminder.title }}</h3>
+      <p>{{ reminder.date | date: 'shortTime' }}</p>
+    </div>
+  </div>
+</mat-card>

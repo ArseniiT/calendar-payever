@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { CalendarV1Component } from './calendar-v1/calendar-v1.component';
+import { CalendarV1Component } from './components/calendar/calendar.component';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 

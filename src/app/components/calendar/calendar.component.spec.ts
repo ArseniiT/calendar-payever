@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CalendarV1Component } from './calendar-v1.component';
+import { CalendarV1Component } from './calendar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { By } from '@angular/platform-browser';
