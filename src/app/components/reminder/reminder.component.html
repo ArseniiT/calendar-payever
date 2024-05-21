@@ -1,6 +1,7 @@
 <mat-card class="reminder">
   <div class="reminder-header">
-    <h2>Reminders for {{ selectedDate | date: 'longDate' }}</h2>
+    <h2>Reminders</h2>
+    <h3>{{ selectedDate | date: 'longDate' }}</h3>
   </div>
   <div class="reminder-list">
     <div *ngFor="let reminder of reminders">

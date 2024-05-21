@@ -11,7 +11,7 @@ describe('ReminderComponent', () => {
       imports: [ReminderComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ReminderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

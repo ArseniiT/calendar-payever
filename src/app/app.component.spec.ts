@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { CalendarV1Component } from './components/calendar/calendar.component';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -54,9 +53,23 @@ describe('AppComponent', () => {
     const containerElement: HTMLElement = fixture.debugElement.query(By.css('.container')).nativeElement;
     const styles = getComputedStyle(containerElement);
 
+    // for larger screens
     expect(styles.display).toBe('flex');
+    expect(styles.flexDirection).toBe('row');
     expect(styles.justifyContent).toBe('center');
-    expect(styles.alignItems).toBe('center');
-    expect(parseInt(styles.height)).toBe(window.innerHeight);
+    expect(styles.alignItems).toBe('flex-start');
+    expect(parseInt(styles.marginTop)).toBe(100);
+  });
+
+  it('should style the container correctly for mobile devices', () => {
+    // less then 576px
+    spyOnProperty(window, 'innerWidth').and.returnValue(500);
+
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const containerElement: HTMLElement = fixture.debugElement.query(By.css('.container')).nativeElement;
+    const styles = getComputedStyle(containerElement);
+
+    expect(styles.display).toBe('flex');
   });
 });
