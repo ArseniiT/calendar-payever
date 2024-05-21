@@ -10,3 +10,10 @@
     text-align: center;
 }
 
+.add-reminder-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}

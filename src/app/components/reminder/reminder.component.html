@@ -9,4 +9,9 @@
       <p>{{ reminder.date | date: 'shortTime' }}</p>
     </div>
   </div>
+  <div class="add-reminder-btn">
+    <button mat-fab color="primary" (click)="creatReminder()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 </mat-card>
