@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 export class CalendarV1Component implements OnInit {
 
   @Output() selected = new EventEmitter<Date>();
+  @Output() cardHeight = new EventEmitter<number>();
 
   selectedDate!: Date;
   currentDate!: Date;
@@ -24,7 +25,7 @@ export class CalendarV1Component implements OnInit {
   startYear!: number;
   endYear!: number;
 
-  constructor() { }
+  constructor(private elementRef: ElementRef, private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.currentDate = new Date();
@@ -32,6 +33,18 @@ export class CalendarV1Component implements OnInit {
     this.generateCalendar();
     this.generateYears();
     this.selected.emit(this.selectedDate);
+  }
+
+  ngAfterViewInit(): void {
+    this.emitCalendarHeight();
+  }
+
+  emitCalendarHeight(): void {
+    const calendarCardElement = this.elementRef.nativeElement.querySelector('mat-card');
+    if (calendarCardElement) {
+      const newHeight = calendarCardElement.offsetHeight;
+      this.cardHeight.emit(newHeight);
+    }
   }
 
   generateCalendar() {
@@ -68,7 +81,9 @@ export class CalendarV1Component implements OnInit {
       newDate.setMonth(newDate.getMonth() + 1);
       this.currentDate = newDate;
       this.generateCalendar();
+      this.changeDetectorRef.detectChanges();
     }
+    this.emitCalendarHeight();
   }
 
   prevMonth() {
@@ -79,7 +94,9 @@ export class CalendarV1Component implements OnInit {
       newDate.setMonth(newDate.getMonth() - 1);
       this.currentDate = newDate;
       this.generateCalendar();
+      this.changeDetectorRef.detectChanges();
     }
+    this.emitCalendarHeight();
   }
 
   selectDay(day: number) {
