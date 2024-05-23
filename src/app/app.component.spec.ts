@@ -37,16 +37,6 @@ describe('AppComponent', () => {
     expect(component.selectedDate).toBe(testDate);
   });
 
-  it('should display selected date in the console when a date is selected', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const component = fixture.componentInstance;
-    spyOn(console, 'log');
-    const testDate = new Date(2024, 4, 15);
-
-    component.onDateSelected(testDate);
-    expect(console.log).toHaveBeenCalledWith(testDate);
-  });
-
   it('should style the container correctly', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

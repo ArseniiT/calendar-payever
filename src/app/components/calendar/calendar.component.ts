@@ -27,7 +27,7 @@ export class CalendarV1Component implements OnInit {
 
   constructor(private elementRef: ElementRef, private changeDetectorRef: ChangeDetectorRef) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.currentDate = new Date();
     this.selectedDate = new Date();
     this.generateCalendar();
@@ -35,11 +35,11 @@ export class CalendarV1Component implements OnInit {
     this.selected.emit(this.selectedDate);
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.emitCalendarHeight();
   }
 
-  emitCalendarHeight(): void {
+  emitCalendarHeight() {
     const calendarCardElement = this.elementRef.nativeElement.querySelector('mat-card');
     if (calendarCardElement) {
       const newHeight = calendarCardElement.offsetHeight;

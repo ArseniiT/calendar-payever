@@ -18,23 +18,23 @@ export class ReminderComponent implements OnInit {
 
   constructor(private reminderService: ReminderService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getReminders();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes['selectedDate'] && !changes['selectedDate'].firstChange) {
       this.getReminders();
     }
   }
 
-  getReminders(): void {
+  getReminders() {
     if (this.selectedDate) {
       this.reminders = this.reminderService.getRemindersByDate(this.selectedDate);
     }
   }
 
-  creatReminder(): void {
-    // open dialog to create reminder
+  // Open modal dialog to create reminder
+  creatReminder() {
   }
 }

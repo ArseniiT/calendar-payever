@@ -1,16 +1,15 @@
 <mat-card class="reminder">
   <div class="reminder-header">
-    <h2>Reminders</h2>
-    <h3>{{ selectedDate | date: 'longDate' }}</h3>
+    <span>Reminders for {{ selectedDate | date: 'longDate' }}</span>
   </div>
   <div class="reminder-list">
     <div *ngFor="let reminder of reminders">
-      <h3>{{ reminder.title }}</h3>
+      <p>{{ reminder.title }}</p>
       <p>{{ reminder.date | date: 'shortTime' }}</p>
     </div>
   </div>
   <div class="add-btn">
-    <button mat-mini-fab (click)="creatReminder()">
+    <button mat-mini-fab class="round-btn" (click)="creatReminder()">
       <mat-icon>add</mat-icon>
     </button>
   </div>

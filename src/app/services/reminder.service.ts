@@ -6,18 +6,19 @@ import { Reminder } from '../models/reminder.model';
 })
 export class ReminderService {
   private reminders: Reminder[] = [];
+  private numberOfReminders = 4;
 
   constructor() {
-    this.generateSampleReminders(3);
+    this.generateSampleReminders();
   }
 
-  generateSampleReminders(numverOfReminders: number) {
+  generateSampleReminders() {
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
 
-    for (let i = 1; i <= numverOfReminders; i++) {
+    for (let i = 1; i <= this.numberOfReminders; i++) {
       const reminder = new Reminder(
         i,
         `Reminder ${i}`,
